@@ -20,7 +20,7 @@ body {
     white-space: nowrap;
     overflow: hidden;
     border-right: 2px solid #33ff33;
-    animation: typing 10s steps(30) infinite;
+    animation: typing 4s steps(30) infinite, pause 2s;
 }
 
 @keyframes typing {
