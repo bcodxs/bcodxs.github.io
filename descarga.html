@@ -30,25 +30,26 @@
 
         header::before {
             content: '';
+	          padding: 1px;
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, #FEFEFE, #000000, #000000);
+            background: linear-gradient(25deg, #FEFEFE, #FEFEFE, #FEFEFE);
             z-index: -1;
             transition: opacity 0.5s;
         }
 
         header:hover::before {
-            opacity: 0.7;
+            opacity: 10;//0.7
         }
 
         nav {
-            background: linear-gradient(90deg, #000000, #000000);
-            padding: 10px;
+            background:#000; //linear-gradient(0deg, #FEFEFE, #000000);90dg
+            padding: 2px;
             text-align: center;
-            border-radius: 15px;
+            border-radius: 1px;
             transition: background 0.3s, box-shadow 0.3s;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
@@ -56,19 +57,19 @@
         nav a {
             color: #FEFEFE;
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 5px 20px;//10
             margin: 0 10px;
             display: inline-block;
             border-radius: 10px;
             transition: color 0.3s, background 0.3s, transform 0.3s, box-shadow 0.3s;
-            background: linear-gradient(90deg, #000000, #000000);
+            background: #000; //linear-gradient(90deg, #000000, #000000);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             font-size: 1.1em;
         }
 
         nav a:hover {
-            color: #000000;
-            background: #FEFEFE;
+            color: #000;
+            background: #fff;
             transform: translateY(-3px);
             box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
         }
@@ -83,23 +84,25 @@
         section:hover {
             transform: translateY(-10px);
         }*/
-
-	section {
-            padding: 40px;
+	      section {
+            padding: 0px;
             text-align: left;
             position: relative;
             overflow: hidden;
-	    padding-left: 20px;//edit
+            padding-left: 0px;
+            display: flex;
+            flex-direction: column-reverse ;
+            margin-left: 10%;
         }
 
         .terminal-container {
             border: 2px solid #FEFEFE;
             border-radius: 5px;
-            height: 300px;
-	    /*width: 500px;*/
+            height: 300px; 
+            width: 500px;
             overflow: hidden;
-            position: relative;
-            font-size: 50px;
+            position: linear;
+            font-size: 15px;
         }
 
         .terminal {
@@ -109,14 +112,23 @@
             border-radius: 5px;
             font-family: 'Courier New', monospace;
             white-space: pre-line;
-            margin: 0;
+            margin: 10%;
             transition: transform 1s linear;
-            animation: terminalAnimation 3s forwards;
+            animation: terminalAnimation 2s forwards;
+            overflow-x: auto;
+            
+        }
+        .terminal p{
+          margin-top: 0;
         }
 
         .prompt {
             color: #00FF00;
         }
+        .text-content {
+             flex-grow: 1;
+              padding-right: 20px; 
+         }
 
         @keyframes terminalAnimation {
             0% {
@@ -138,23 +150,27 @@
         }
 
         p {
-            line-height: 1.6;
+            line-height: 1.9;
             color: #FEFEFE;
         }
 
         .cta-button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 20px;
-            background-color: #000000;
-            color: #FEFEFE;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+           display: inline-block;
+           padding: 10px 20px;
+           //margin-top: 10px;
+           background-color: #000000;
+           color: #FEFEFE;
+           text-decoration: none;
+           border-radius: 5px;
+           transition: background-color 0.3s;
+           border: 2px solid #FEFEFE; 
+           margin-left: 140px;
+          
         }
 
         .cta-button:hover {
             background-color: #333333;
+            color: #FEFEFE; 
         }
 
         footer {
@@ -199,12 +215,16 @@
 
      
     <section>
-        <h2>>nada por aqui<</h2>
+        <div>
+          <h1>Telegram bot </h1>
         <div class="terminal-container">
             <div class="terminal" id="terminal">
-		X(
+		  <h1>v0.1</h1>
+		  <p></p>-Funcion añadida descargar videos de youtube</p>
+		<a class="cta-button"href="https://github.com/bcodxs/botT/releases">Descargar</a>
             </div>
-        </div>
+            </div>
+            
     </section>
 
 
