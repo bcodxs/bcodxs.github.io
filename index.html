@@ -1,3 +1,5 @@
+
+         
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -30,25 +32,26 @@
 
         header::before {
             content: '';
+            padding: 1px;
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, #FEFEFE, #000000, #000000);
+            background: linear-gradient(25deg, #FEFEFE, #FEFEFE, #FEFEFE);
             z-index: -1;
             transition: opacity 0.5s;
         }
 
         header:hover::before {
-            opacity: 0.7;
+            opacity: 10; /*0.7*/
         }
 
         nav {
-            background: linear-gradient(90deg, #000000, #000000);
-            padding: 10px;
+            background:#000; /*linear-gradient(0deg, #FEFEFE, #000000);90dg*/
+            padding: 2px;
             text-align: center;
-            border-radius: 15px;
+            border-radius: 1px;
             transition: background 0.3s, box-shadow 0.3s;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
@@ -56,74 +59,56 @@
         nav a {
             color: #FEFEFE;
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 5px 20px;/*10*/
             margin: 0 10px;
             display: inline-block;
             border-radius: 10px;
             transition: color 0.3s, background 0.3s, transform 0.3s, box-shadow 0.3s;
-            background: linear-gradient(90deg, #000000, #000000);
+            background: #000; /*linear-gradient(90deg, #000000, #000000);*/
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             font-size: 1.1em;
         }
 
         nav a:hover {
-            color: #000000;
-            background: #FEFEFE;
+            color: #000;
+            background: #fff;
             transform: translateY(-3px);
             box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
         }
 
-/*        section {
-            padding: 50px;
-            text-align: center;
-            transition: color 0.3s, transform 0.3s;
-            transform: translateY(0);
-        }
-
-        section:hover {
-            transform: translateY(-10px);
-        }*/
-	section {
+        section {
             padding: 40px;
             text-align: left;
             position: relative;
             overflow: hidden;
-	    padding-left: 20px;
+            padding-left: 10%;
         }
 
         .terminal-container {
             border: 2px solid #FEFEFE;
             border-radius: 5px;
             height: 300px; 
-            //width: 400px;
+            width: 500px;
             overflow: hidden;
             position: relative;
-            font-size: 15px;
+            font-size: 13px;
         }
 
         .terminal {
             background-color: #000000;
             color: #FEFEFE;
-            padding: 0px;
+            margin-left: 0;
             border-radius: 5px;
+            white-space: pre-linear;
             font-family: 'Courier New', monospace;
-            white-space: pre-line;
-            margin: 0;
             transition: transform 1s linear;
-            animation: terminalAnimation 3s forwards;
+        }
+
+        .termina p {
         }
 
         .prompt {
             color: #00FF00;
-        }
-
-        @keyframes terminalAnimation {
-            0% {
-                transform: translateY(100%);
-            }
-            100% {
-                transform: translateY(0);
-            }
         }
 
         h1, h2 {
@@ -192,7 +177,7 @@
 
     <nav>
         <a href="index.html">Inicio</a>
-        <a href="descarga.html"">Descargar</a>
+        <a href="descarga.html">Descargar</a>
         <a href="#contacto">Contacto</a>
     </nav>
 
@@ -203,62 +188,58 @@
             <div class="terminal" id="terminal">
             </div>
         </div>
+        <h2>Telgram bot disponible</h2>
     </section>
-
 
     <footer>
         <p>&copy; 202? bcodxs</p>
     </footer>
-                
- 
- <script>
-    const terminalElement = document.getElementById("terminal");
-    function typeTerminalText(text, speed, callback) {
-        let index = 0;
-        const intervalId = setInterval(() => {
-            terminalElement.textContent += text[index];
-            index++;
-            if (index === text.length) {
-                clearInterval(intervalId);
-                if (callback) {
-                    callback();
+
+
+    <script>
+        const terminalElement = document.getElementById("terminal");
+
+        function typeTerminalText(text, speed, callback) {
+            let index = 0;
+            const intervalId = setInterval(() => {
+                terminalElement.textContent += text[index];
+                index++;
+                if (index === text.length) {
+                    clearInterval(intervalId);
+                    if (callback) {
+                        callback();
+                    }
                 }
-            }
-        }, speed);
-    }
+            }, speed);
+        }
 
-    // tabvla
-    function showModernText() {
-        const tableText = `
-		-Data Information:
+        function showModernText() {
+            const modernTableText = `
+            ╭───────────────────╮
+            │      SMUR                    │
+            ├───────────┬───────┤
+            │   Cipher  │  256KB  │ PDF   │
+            │  Nebula   │  1.2MB  │DOCX   │
+            │  Stellar  │  800KB  │PPTX   │
+            │   Aether  │  2.5MB  │ ZIP   │  
+            │ Celestial │  500KB  │ JPG   │
+            ╰───────────╧───────╯
 
--File:file1.txt/..    Program:smur
--File:secret.pdf/..   Program:sf.exe
--File: data.txt/..    Program:ciberseg.?
--File: doc.doc/..     Program:matrix.exe
--File: archive.zip/.. Program:cde_breaker.exe
-`;
-        // ajustr linea d tbvla
-        const separatedTableText = tableText.replace(/\n/g, '\n');
 
-        setTimeout(() => {
-            terminalElement.innerHTML += separatedTableText;
-        }, 100);
-    }
-        //setTimeout(() => {
-          //  terminalElement.innerHTML += tableText;
-        //}, 10);  
-    //}
+   `;
 
-    setTimeout(() => {
-        typeTerminalText("$./smur\n\t", 80, () => {
-            setTimeout(() => {
-                showModernText();
-            }, 10);
-        });
-    }, 1000);
-     
+           
+            terminalElement.textContent = '';
+
+           
+            typeTerminalText("$ ./smur\n\t", 110, () => {
+                terminalElement.innerHTML += '<pre>' + modernTableText + '</pre>';
+                
+                setTimeout(showModernText, 2010);
+            });
+        }
+
+        showModernText();
     </script>
 </body>
-</html>
-
+	</html>
