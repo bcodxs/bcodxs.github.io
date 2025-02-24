@@ -214,25 +214,13 @@
         }
 
         function showModernText() {
-            const modernTableText = `
-            ╭───────────────────╮
-            │      SMUR                    │
-            ├───────────┬───────┤
-            │   Cipher  │  256KB  │ PDF   │
-            │  Nebula   │  1.2MB  │DOCX   │
-            │  Stellar  │  800KB  │PPTX   │
-            │   Aether  │  2.5MB  │ ZIP   │  
-            │ Celestial │  500KB  │ JPG   │
-            ╰───────────╧───────╯
-
-
-   `;
+            const modernTableText = ` . . . . . . . . . . . . . . . . . . . . . . . . . . .  `;
 
            
             terminalElement.textContent = '';
 
            
-            typeTerminalText("$ ./smur\n\t", 110, () => {
+            typeTerminalText("$ ./\n\t", 110, () => {
                 terminalElement.innerHTML += '<pre>' + modernTableText + '</pre>';
                 
                 setTimeout(showModernText, 2010);
